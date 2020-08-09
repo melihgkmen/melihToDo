@@ -34,7 +34,7 @@ const ToDoHomePage = (props) => {
   );
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: 'grey'}}>
       <KeyboardAvoidingView
         behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
         style={{flex: 1}}>
@@ -77,6 +77,7 @@ const ToDoHomePage = (props) => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'yellow',
     flex: 1,
     marginTop: 0,
   },

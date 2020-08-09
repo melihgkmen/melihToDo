@@ -23,6 +23,8 @@ const ToDoDetailPage = (props) => {
           alignItems: 'center',
           paddingTop: 20,
           flex: 1,
+          backgroundColor: 'grey',
+          paddingBottom: 20
         }}>
         <Input
           placeholder="Title"
