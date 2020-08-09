@@ -194,7 +194,6 @@
 				C4737B0402E2A668AF0743BB /* Pods-melihToDo-tvOSTests.debug.xcconfig */,
 				D73B603033909E990711659D /* Pods-melihToDo-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -287,7 +286,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1160;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -610,6 +609,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ECB40E6999E657120F325BEF /* Pods-melihToDo-melihToDoTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -633,6 +633,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B9699EE2EA1404633D6D55B /* Pods-melihToDo-melihToDoTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = melihToDoTests/Info.plist;
