@@ -6,7 +6,7 @@ const Button = (props) => (
     activeOpacity={0.8}
     onPress={props.onPress}
     style={{
-      backgroundColor: '#4424cb',
+      backgroundColor: '#ff5c5c',
       width: '80%',
       height: '15%',
       alignItems: 'center',

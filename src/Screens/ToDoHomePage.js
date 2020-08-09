@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {
   Text,
   View,
+  Icon,
   StyleSheet,
   TouchableOpacity,
   FlatList,
@@ -51,6 +52,7 @@ const ToDoHomePage = (props) => {
                   height: 300,
                   justifyContent: 'center',
                 }}>
+                {/* <Icon name="md-close-circle" style={closeIconStyle} /> */}
                 <Text style={{fontSize: 10, marginBottom: 30}}>
                   Herhangi bir veri bulunamadı.
                 </Text>
@@ -93,6 +95,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: 'yellow',
   },
+/*   closeIconStyle: {
+    fontSize: moderateScale(20),
+    color: "#ca0100",
+    marginTop: moderateScale(3)
+} */
 });
 
 const mapStateToProps = (state) => {
