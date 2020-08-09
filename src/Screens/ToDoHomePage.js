@@ -11,6 +11,7 @@ import {
   RefreshControl,
 } from 'react-native';
 import {Input, Button} from '../Components';
+import {connect, useDispatch} from 'react-redux';
 const ToDoHomePage = (props) => {
   const [data, setData] = useState([]);
 
@@ -22,8 +23,7 @@ const ToDoHomePage = (props) => {
       arr.push(props.route.params?.obj);
       setData(arr);
     }
-  }, 
-  [props.route.params?.obj])
+  }, [props.route.params?.obj]);
 
   const renderItem = ({item}) => (
     <View style={styles.item}>
@@ -84,15 +84,21 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     borderWidth: 0.5,
     borderRadius: 10,
-    borderColor: 'red',
+    borderColor: 'yellow',
   },
   title: {
     fontSize: 18,
   },
   dsc: {
     fontSize: 14,
-    color: 'red',
+    color: 'yellow',
   },
 });
 
-export default ToDoHomePage;
+const mapStateToProps = (state) => {
+  console.log('Gelen data: ', state);
+  const {list, loading, data} = state.listResponse;
+  return {list, list, data};
+};
+
+export default connect(mapStateToProps, {})(ToDoHomePage);

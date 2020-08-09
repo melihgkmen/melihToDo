@@ -19,7 +19,7 @@ function Router(props) {
             title: 'melihToDo',
             headerRight: () => (
               <TouchableOpacity
-                onPress={() => navigation.navigate('ListDetail')}
+                onPress={() => navigation.navigate('ToDoDetailPage')}
                 style={{
                   marginRight: 20,
                 }}>
@@ -30,9 +30,9 @@ function Router(props) {
         />
 
         <Stack.Screen
-          name="ListDetail"
+          name="ToDoDetailPage"
           component={ToDoDetailPage}
-          options={{title: 'Add Todo List'}}
+          options={{title: ' Listeye Ekle '}}
         />
       </Stack.Navigator>
     </NavigationContainer>

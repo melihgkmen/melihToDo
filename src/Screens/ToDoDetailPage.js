@@ -6,10 +6,13 @@ import {
   Platform,
   ScrollView,
 } from 'react-native';
-
+import {connect, useDispatch} from 'react-redux';
 import {Input, Button} from '../Components';
+import {UPDATE_LIST} from '../actions/types';
 
 const ToDoDetailPage = (props) => {
+  const dispatch = useDispatch();
+
   const [title, setTitle] = useState();
   const [dsc, setDsc] = useState();
 
@@ -41,9 +44,8 @@ const ToDoDetailPage = (props) => {
               title,
               dsc,
             };
-           
-
-            props.navigation.navigate('ToDoHomePage', {obj});
+            dispatch({type: UPDATE_LIST, payload: obj});
+            props.navigation.pop();
           }}
         />
       </View>
@@ -51,4 +53,9 @@ const ToDoDetailPage = (props) => {
   );
 };
 
-export default ToDoDetailPage;
+const mapStateToProps = ({listResponse}) => {
+  const {list} = listResponse;
+  return {list};
+};
+
+export default connect(mapStateToProps, {})(ToDoDetailPage);
