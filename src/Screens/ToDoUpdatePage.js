@@ -11,7 +11,7 @@ import {Input, Button} from '../Components';
 import {LOADING_START, LOADING_END, UPDATE_LIST} from '../actions/types';
 import {updateList} from '../actions';
 
-const ToDoDetailPage = (props) => {
+const ToDoUpdatePage = (props) => {
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState();
@@ -44,7 +44,7 @@ const ToDoDetailPage = (props) => {
         />
 
         <Button
-          text={'Add'}
+          text={'Update'}
           style={{height: 40}}
           onPress={() => {
             let obj = {
@@ -65,4 +65,4 @@ const mapStateToProps = ({listResponse}) => {
   return {list, loading};
 };
 
-export default connect(mapStateToProps, {updateList})(ToDoDetailPage);
+export default connect(mapStateToProps, {updateList})(ToDoUpdatePage);

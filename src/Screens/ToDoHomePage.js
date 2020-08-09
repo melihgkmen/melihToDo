@@ -4,7 +4,6 @@ import {
   View,
   Icon,
   StyleSheet,
-  TouchableOpacity,
   FlatList,
   SafeAreaView,
   KeyboardAvoidingView,
@@ -13,18 +12,14 @@ import {
 } from 'react-native';
 import {Input, Button} from '../Components';
 import {connect, useDispatch} from 'react-redux';
+import {ADD_LIST_LOCAL, SET_LIST} from '../actions/types';
+import {getList} from '../actions';
+
 const ToDoHomePage = (props) => {
-  const [data, setData] = useState([]);
 
   useEffect(() => {
-    console.log('Gelen: ', props.route.params?.obj);
-
-    if (props.route.params?.obj) {
-      let arr = data.slice();
-      arr.push(props.route.params?.obj);
-      setData(arr);
-    }
-  }, [props.route.params?.obj]);
+    props.getList()
+  }, [])
 
   const renderItem = ({item}) => (
     <View style={styles.item}>
@@ -40,7 +35,7 @@ const ToDoHomePage = (props) => {
         style={{flex: 1}}>
         <FlatList
           style={{flex: 1}}
-          data={data}
+          data={props.list}
           renderItem={renderItem}
           keyExtractor={(item) => item.title}
           ListEmptyComponent={() => {
@@ -96,7 +91,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: 'yellow',
   },
-/*   closeIconStyle: {
+  /*   closeIconStyle: {
     fontSize: moderateScale(20),
     color: "#ca0100",
     marginTop: moderateScale(3)
@@ -109,4 +104,4 @@ const mapStateToProps = (state) => {
   return {list, list, data};
 };
 
-export default connect(mapStateToProps, {})(ToDoHomePage);
+export default connect(mapStateToProps, {getList})(ToDoHomePage);
